@@ -112,6 +112,7 @@ class Game_Object:
 
         if self.game_time > max_time_set:
             self.alive = False
+            self.score = mod_score_for_food_eated * self.food_eat + mod_score_for_new_gen * self.new_gen_created
 
     def create_new(self,):
         if len(bacteria_list) < gen_max_count:
