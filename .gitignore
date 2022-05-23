@@ -1,0 +1,7 @@
+__pycache__
+.idea
+.vs
+.gitirnore
+save_score.txt
+Network.ini
+test.py
