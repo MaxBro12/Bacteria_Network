@@ -138,8 +138,8 @@ class Food(Game_Object):
         self.visible_radius = 100
 
     def randomise(self):
-        self.pos_x = game_pix_x / food_count
-        self.pos_y = game_pix_y / 2
+        self.pos_x = randint(0, game_pix_x)
+        self.pos_y = randint(0, game_pix_y)
 
 
 class Bacteria(Game_Object):
@@ -403,6 +403,8 @@ def genetic_algorithm(bacteria_list_in):
         else:
             best_of_10_gen = bacteria_list_in[0]
     new_bacteria_list = [Bacteria() for _ in range(bacteria_count)]
+    for i in food_list:
+        i.randomise()
 
     for i in range(bacteria_count):
         if i <= int(bacteria_count / 1.5):
